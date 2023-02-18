@@ -1,6 +1,6 @@
 # Sample users
 3.times do
-  User.new(email: "me#{rand(0..5)}@gmail.com" , password: "12345678" , first_name: "me#{rand(0..9)}", last_name: "me#{rand(0..9)}" )
+  User.create(email: "me#{rand(0..5)}@gmail.com" , password: "12345678" , first_name: "me#{rand(0..9)}", last_name: "me#{rand(0..9)}" )
 end
 
 # Sample EXPERIENCES
@@ -16,4 +16,3 @@ Experience.create(name: "Traditional Flamenco Show", description: "Flamenco is i
 10.times do
   Booking.create(start_date: DateTime.now + rand(0..5), user: User.all.sample, experience: Experience.all.sample, status: 0 )
 end
-

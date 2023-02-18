@@ -1,1 +1,15 @@
-<h1>Home</h1>
+<div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1546778316-dfda79f1c84e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);">
+  <div class="container">
+    <h1><strong>Tradys</strong></h1>
+    <p>Enjoy traditions around the world.</p>
+  </div>
+</div>
+<div class="container">
+<div class="cards">
+  <% @experiences.each do |experience| %>
+  <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <%= experience.name %>
+  </div>
+  <% end %>
+</div>
+</div>
