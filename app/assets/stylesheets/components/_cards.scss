@@ -4,6 +4,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 25px;
   padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card-trip > img {
@@ -19,6 +21,10 @@
   margin: 0;
 }
 
+.card-trip-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -47,6 +53,10 @@
   text-align: center;
 }
 
+.hosted-by {
+  margin-left: 10px;
+
+}
 
 [type="date"] {
   background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
