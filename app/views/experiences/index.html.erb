@@ -7,7 +7,7 @@
 <div class="container">
 <div class="cards">
   <% @experiences.each do |experience| %>
-  <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= experience.name.split[1] %>&<%= rand(1000) %>)">
   <%= experience.name %>
   </div>
   <% end %>
