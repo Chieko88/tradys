@@ -4,7 +4,7 @@
     <p>Enjoy traditions around the world.</p>
   </div>
 </div>
-<div class="container">
+<div class="container-fluid">
 <div class="cards">
   <% @experiences.each do |experience| %>
   <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= experience.name.split[1] %>&<%= rand(1000) %>)">
