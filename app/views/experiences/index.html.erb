@@ -9,6 +9,7 @@
   <% @experiences.each do |experience| %>
   <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= experience.name.split[1] %>&<%= rand(1000) %>)">
   <%= experience.name %>
+  <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
   </div>
   <% end %>
 </div>
