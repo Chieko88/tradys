@@ -1,0 +1,22 @@
+
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @experience.name %></h2>
+      <h3> <%= @experience.address %></h3>
+      <p><%= @experience.description %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @experience.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+  <h4>Hosted By:<%= @experience.user.first_name %></h4>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Book Your Experience!</h5>
+  <div class="card-body">
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Book Now</a>
+  </div>
+</div>
