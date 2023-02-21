@@ -5,4 +5,10 @@ class BookingPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def create?
+    # host can't book their own experience
+    # user != record.experience.user
+    true
+  end
 end
