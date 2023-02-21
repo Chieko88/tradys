@@ -1,22 +1,26 @@
 
 <div class="card-trip">
+  <h2 class="card-trip-title"><%= @experience.name %></h2>
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2><%= @experience.name %></h2>
       <h3> <%= @experience.address %></h3>
       <p><%= @experience.description %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= @experience.price %></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <div class ="hosted-by">
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="user avatar-bordered" />
+     <h4>Hosted By: <br><%= @experience.user.first_name %></h4>
+    </div>
   </div>
-  <h4>Hosted By:<%= @experience.user.first_name %></h4>
+
 </div>
 
 <div class="card">
-  <h5 class="card-header">Book Your Experience!</h5>
+  <h6 class="card-trip-pricing">¥<%= @experience.price %>/ <%= @experience.duration %></h6>
   <div class="card-body">
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <label for="experiencedate">Choose a Date</label>
+<input type="date" name="experiencedate" id="experiencedate">
+
     <a href="#" class="btn btn-primary">Book Now</a>
   </div>
 </div>
