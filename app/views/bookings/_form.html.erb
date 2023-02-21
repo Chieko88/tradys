@@ -1,0 +1,7 @@
+<div class="container mt-3">
+  <h1>Book now</h1>
+  <%= simple_form_for [@experience, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.submit class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>
