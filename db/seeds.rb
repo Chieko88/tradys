@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+
+# Sample bookings ( status to be set default 0 on migration)
+10.times do
+  Booking.create(start_date: DateTime.now + rand(0..5), user: User.all.sample, experience: Experience.all.sample, status: 0 )
+end
+
+# Sample users
+3.times do
+  User.new(email: "me#{rand(0..5)}@gmail.com" , password: "12345678" , first_name: "me#{rand(0..9)}", last_name: "me#{rand(0..9)}" )
+end
