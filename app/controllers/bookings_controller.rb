@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = Booking.all
+  end
+
   private
 
     # validates :start_date, presence: true
