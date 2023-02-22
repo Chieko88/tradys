@@ -10,7 +10,7 @@
         <h2><%= booking.experience.name %></h2>
         <p><%= booking.experience.price %></p>
         <p><%= booking.experience.address %></p>
-        <p><%= booking.start_date %></p>
+        <p><%= booking.start_date.to_fs(:long_ordinal) %></p>
         <% if booking.status == 0 %>
           <p>Status : Pending</p>
         <% elsif booking.status == 1 %>
