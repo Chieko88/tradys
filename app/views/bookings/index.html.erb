@@ -8,7 +8,7 @@
       <%= cl_image_tag booking.experience.photo.key %>
       <div class="card-product-infos">
         <h2><%= booking.experience.name %></h2>
-        <p><%= booking.experience.price %></p>
+        <p><%= booking.experience.price %> JPY</p>
         <p><%= booking.experience.address %></p>
         <p><%= booking.start_date.to_fs(:long) %></p>
         <% if booking.status == 0 %>
