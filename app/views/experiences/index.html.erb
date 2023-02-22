@@ -7,7 +7,7 @@
 <div class="container-fluid">
 <div class="cards">
   <% @experiences.each do |experience| %>
-    <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= experience.name.split[1] %>&<%= rand(1000) %>)">
+    <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path experience.photo.key %>)">
     <%= experience.name %>
     <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
     </div>

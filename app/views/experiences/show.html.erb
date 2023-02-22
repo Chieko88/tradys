@@ -1,7 +1,7 @@
 
 <div class="card-trip">
   <h2 class="card-trip-title"><%= @experience.name %></h2>
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <%= cl_image_tag @experience.photo.key %>
   <div class="card-trip-infos">
     <div>
       <h3> <%= @experience.address %></h3>
