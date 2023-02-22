@@ -2,25 +2,19 @@
 <div class="card-trip">
   <h2 class="card-trip-title"><%= @experience.name %></h2>
   <%= cl_image_tag @experience.photo.key %>
-  <div class="card-trip-infos">
-    <div>
-      <h3> <%= @experience.address %></h3>
+  <div class="card-trip-infos justify-content-start">
+         <div>
+      <h3> <i class="fa-solid fa-globe"></i> <%= @experience.address %></h3>
       <p><%= @experience.description %></p>
-    </div>
-    <div class ="hosted-by">
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="user avatar-bordered" />
-     <h4>Hosted By: <br><%= @experience.user.first_name %></h4>
     </div>
   </div>
 
 </div>
 
 <div class="card">
-  <h6 class="card-trip-pricing">¥<%= @experience.price %>/ <%= @experience.duration %>min</h6>
+  <h6 class="card-trip-pricing"><b>¥<%= @experience.price %></b> <%= @experience.duration %>min</h6>
   <div class="card-body">
-
-  <%= render 'bookings/form' %>
-  <%= link_to 'To my bookings', bookings_path %>
-
+    <%= render 'bookings/form' %>
+    <%= link_to 'To my bookings', bookings_path %>
   </div>
 </div>
