@@ -7,17 +7,33 @@
     <div class="card-product my-3">
       <%= cl_image_tag booking.experience.photo.key %>
       <div class="card-product-infos">
-        <h2><%= booking.experience.name %></h2>
-        <p><%= booking.experience.price %></p>
-        <p><%= booking.experience.address %></p>
-        <p><%= booking.start_date %></p>
-        <% if booking.status == 0 %>
-          <p>Status : Pending</p>
-        <% elsif booking.status == 1 %>
-          <p>Status : Accepted</p>
-        <% elsif booking.status == 2 %>
-          <p>Status : Rejected</p>
-        <% end %>
+        <h2 class="my-3"><%= booking.experience.name %></h2>
+        <div class="row d-flex align-items">
+          <div class="col">
+            <i class="fa-regular fa-clock"></i>
+            <p><%= booking.start_date %></p>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-location-dot"></i>
+            <p><%= booking.experience.address %></p>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-yen-sign"></i>
+            <p><%= booking.experience.price %></p>
+          </div>
+          <div class="col">
+            <i class="fa-regular fa-circle-check"></i>
+            <p>
+              <% if booking.status == 0 %>
+                <p class="badge rounded-pill text-bg-warning m-0">Pending</p>
+              <% elsif booking.status == 1 %>
+                <p class="badge rounded-pill text-bg-success">Accepted</p>
+              <% elsif booking.status == 2 %>
+                <p class="badge rounded-pill text-bg-secondary">Rejected</p>
+              <% end %>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
