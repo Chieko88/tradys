@@ -74,6 +74,10 @@
   }
 }
 
+.card-display-box{
+  position: relative;
+}
+
 .card-display {
   background-size: cover;
   background-position: center;
@@ -88,7 +92,6 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 48px;
-  position: relative;
 }
 
 
@@ -98,6 +101,10 @@
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.card-display-info{
+  padding: 8px;
 }
 
 .card-trip {
