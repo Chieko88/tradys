@@ -11,7 +11,7 @@
         <div class="row d-flex align-items">
           <div class="col">
             <i class="fa-regular fa-clock"></i>
-            <p><%= booking.start_date %></p>
+            <p><%= booking.start_date.to_fs(:long) %></p>
           </div>
           <div class="col">
             <i class="fa-solid fa-location-dot"></i>
@@ -24,7 +24,6 @@
           <div class="col">
             <i class="fa-regular fa-circle-check"></i>
             <p>
-              <p><%= booking.start_date.to_fs(:long) %></p>
               <% if booking.status == 0 %>
                 <p class="badge rounded-pill text-bg-warning m-0">Pending</p>
               <% elsif booking.status == 1 %>
