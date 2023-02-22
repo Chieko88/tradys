@@ -18,9 +18,9 @@
 <div class="card">
   <h6 class="card-trip-pricing">¥<%= @experience.price %>/ <%= @experience.duration %>min</h6>
   <div class="card-body">
-    <label for="experiencedate">Choose a Date</label>
-<input type="date" name="experiencedate" id="experiencedate">
 
-    <br><a href="#" class="btn btn-primary">Book Now</a>
+  <%= render 'bookings/form' %>
+  <%= link_to 'To my bookings', bookings_path %>
+
   </div>
 </div>
