@@ -49,6 +49,7 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 gem "devise"
+gem "dotenv-rails", groups: [:development, :test]
 gem "pundit"
 
 gem "autoprefixer-rails"
