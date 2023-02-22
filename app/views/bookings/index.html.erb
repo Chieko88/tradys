@@ -5,7 +5,7 @@
 <div class="container m-3">
   <% @bookings.each do |booking| %>
     <div class="card-product my-3">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= cl_image_tag booking.experience.photo.key %>
       <div class="card-product-infos">
         <h2><%= booking.experience.name %></h2>
         <p><%= booking.experience.price %></p>
