@@ -16,9 +16,11 @@
 </div>
 
 <div class="card">
-  <h6 class="card-trip-pricing">¥<%= @experience.price %>/ <%= @experience.duration %></h6>
+  <h6 class="card-trip-pricing">¥<%= @experience.price %>/ <%= @experience.duration %>min</h6>
   <div class="card-body">
+
   <%= render 'bookings/form' %>
   <%= link_to 'To my bookings', bookings_path %>
+
   </div>
 </div>

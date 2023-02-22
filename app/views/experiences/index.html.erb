@@ -1,15 +1,16 @@
-<div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1546778316-dfda79f1c84e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);">
+<div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1511360823-5c672a170787?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80);">
   <div class="container">
     <h1><strong>Tradys</strong></h1>
     <p>Enjoy traditions around the world.</p>
   </div>
 </div>
-<div class="container">
+<div class="container-fluid">
 <div class="cards">
   <% @experiences.each do |experience| %>
-  <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <%= experience.name %>
-  </div>
+    <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/featured/?<%= experience.name.split[1] %>&<%= rand(1000) %>)">
+    <%= experience.name %>
+    <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
+    </div>
   <% end %>
 </div>
 </div>
