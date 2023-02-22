@@ -20,6 +20,12 @@
   margin: 0;
 }
 
+.address-info {
+  display:inline;
+  float:right;
+}
+
+
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
@@ -123,9 +129,14 @@
   margin: 0;
 }
 
+.card-trip h4 {
+  font-size: 16px;
+
+}
+
 .card-trip-title {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .card-trip .card-trip-infos {
@@ -155,9 +166,10 @@
   text-align: center;
 }
 
-.hosted-by {
-  margin-left: 10px;
+.card-trip-pricing {
 
+font-size: 18px;
+text-align: right;
 }
 
 [type="date"] {
