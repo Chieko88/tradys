@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = policy_scope(Booking)
+  end
+
   private
 
     # validates :start_date, presence: true
