@@ -2,9 +2,9 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params[:query].present?
-      @experiences = policy_scope(Experience).where(name: params[:query])
+      @experiences = all_experiences.search_by_name(params[:query])
     else
-      @experiences = policy_scope(Experience)
+      @experiences = all_experiences
     end
   end
 
@@ -13,4 +13,11 @@ class ExperiencesController < ApplicationController
     @booking = Booking.new
     authorize @experience
   end
+
+  private
+
+  def all_experiences
+    policy_scope(Experience)
+  end
+
 end
