@@ -1,14 +1,19 @@
 
 <div class="card-trip">
   <h2 class="card-trip-title"><%= @experience.name %></h2>
-  <%= cl_image_tag @experience.photo.key %>
-  <div class="card-trip-infos justify-content-start">
-         <div>
-      <h3> <i class="fa-solid fa-location-dot"></i> <%= @experience.address %></h3>
-      <p><%= @experience.description %></p>
+
+  <div class="row">
+    <%= cl_image_tag @experience.photo.key, class: "col-sm-6"%>
+    <div class="card-trip-infos col-sm-6 align-items-start">
+      <div>
+        <h3> <i class="fa-solid fa-location-dot"></i> <%= @experience.address %></h3>
+        <p class="fs-6"><%= @experience.description %></p>
+        <h4 class="mt-4 mb-2"><i class="fa-regular fa-clock"></i> <%= @experience.duration %> min</h4>
+        <h4 class="my-2"><i class="fa-solid fa-yen-sign"></i> <%= @experience.price %> /<i class="fa-solid fa-person"></i></h4>
+      </div>
+
     </div>
   </div>
-
 </div>
 
 <div class="card">

@@ -8,20 +8,20 @@
       <%= cl_image_tag booking.experience.photo.key %>
       <div class="card-product-infos">
         <h2 class="my-3"><%= booking.experience.name %></h2>
-        <div class="row d-flex align-items">
-          <div class="col">
+        <div class="row">
+          <div class="col-sm-3">
             <i class="fa-regular fa-clock"></i>
             <p><%= booking.start_date.to_fs(:long) %></p>
           </div>
-          <div class="col">
+          <div class="col-sm-3">
             <i class="fa-solid fa-location-dot"></i>
             <p><%= booking.experience.address %></p>
           </div>
-          <div class="col">
+          <div class="col-sm-3">
             <i class="fa-solid fa-yen-sign"></i>
             <p><%= booking.experience.price %>  JPY</p>
           </div>
-          <div class="col">
+          <div class="col-sm-3">
             <i class="fa-regular fa-circle-check"></i>
             <p>
               <% if booking.status == 0 %>
