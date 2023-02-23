@@ -4,4 +4,9 @@ class Booking < ApplicationRecord
 
   # validations
   validates :start_date, presence: true
+  enum status: [ :pending, :accepted, :rejected ]
+
+  def pending?
+    status == 'pending'
+  end
 end

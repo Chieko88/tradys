@@ -5,9 +5,9 @@ class Host::BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    authorize @booking
+    authorize [:host, @booking]
     if @booking.update(booking_params)
-      redirect_to bookings_path
+      redirect_to host_bookings_path
     end
   end
 
