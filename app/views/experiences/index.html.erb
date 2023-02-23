@@ -3,6 +3,16 @@
     <h1><strong>Tradys</strong></h1>
     <p>Enjoy traditions around the world.</p>
   </div>
+
+    <%= form_with url: experiences_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an experience"
+      %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
 </div>
 <div class="container-fluid">
 <div class="cards">
