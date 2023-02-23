@@ -8,7 +8,7 @@
       <%= cl_image_tag booking.experience.photo.key %>
       <div class="card-product-infos">
         <h2 class="my-3"><%= booking.experience.name %></h2>
-        <div class="row d-flex align-items">
+        <div class="row">
           <div class="col">
             <i class="fa-regular fa-clock"></i>
             <p><%= booking.start_date.to_fs(:long) %></p>
