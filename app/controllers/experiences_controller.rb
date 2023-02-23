@@ -1,7 +1,11 @@
 class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @experiences = policy_scope(Experience)
+    if params[:query].present?
+      @experiences = all_experiences.search_by_name_and_description(params[:query])
+    else
+      @experiences = all_experiences
+    end
   end
 
   def show
@@ -25,10 +29,13 @@ class ExperiencesController < ApplicationController
   end
 
 
-private
+  private
 
-def experience_params
-  params.require(:experience).permit(:name, :address, :description, :price, :duration, :photo)
-end
-
+  def experience_params
+    params.require(:experience).permit(:name, :address, :description, :price, :duration, :photo)
+  end
+  
+  def all_experiences
+    policy_scope(Experience)
+  end
 end

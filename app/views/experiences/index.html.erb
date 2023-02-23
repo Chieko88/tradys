@@ -3,19 +3,34 @@
     <h1><strong>Tradys</strong></h1>
     <p>Enjoy traditions around the world.</p>
   </div>
+
+    <%= form_with url: experiences_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an experience"
+      %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
 </div>
 <div class="container-fluid">
 <div class="cards">
-  <% @experiences.each do |experience| %>
-    <div class="card-display-box">
-    <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
-    <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path experience.photo.key %>)">
-    <%= experience.name %>
-    </div>
-    <div style="padding: 8px">
-    <%= "#{experience.description[0...120]}..." %>
-    </div>
-    </div>
+  <% if @experiences.any? %>
+    <% @experiences.each do |experience| %>
+      <div class="card-display-box">
+      <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
+      <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path experience.photo.key %>)">
+      <%= experience.name %>
+      </div>
+      <div style="padding: 8px">
+      <%= "#{experience.description[0...120]}..." %>
+      </div>
+      </div>
+    <% end %>
+  <% else %>
+      <h2>No results found for <em><%= params[:query] %></em> </h2>
+      <p>We couldn't find <em><%= params[:query] %></em>.Try searching again</p>
   <% end %>
 </div>
 </div>
