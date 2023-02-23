@@ -14,10 +14,28 @@ class ExperiencesController < ApplicationController
     authorize @experience
   end
 
+  def new
+    @experience = Experience.new
+  end
+
+  def create
+    @experience = Experience.new(experience_params)
+    @experience.user = current_user
+    if @experience.save
+    redirect_to experiences_path
+    else
+      render :new
+    end
+  end
+
+
   private
 
+  def experience_params
+    params.require(:experience).permit(:name, :address, :description, :price, :duration, :photo)
+  end
+  
   def all_experiences
     policy_scope(Experience)
   end
-
 end
