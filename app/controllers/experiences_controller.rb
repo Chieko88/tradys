@@ -2,7 +2,7 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params[:query].present?
-      @experiences = all_experiences.search_by_name(params[:query])
+      @experiences = all_experiences.search_by_name_and_description(params[:query])
     else
       @experiences = all_experiences
     end
