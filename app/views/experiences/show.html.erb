@@ -4,7 +4,7 @@
   <%= cl_image_tag @experience.photo.key %>
   <div class="card-trip-infos justify-content-start">
          <div>
-      <h3> <i class="fa-solid fa-globe"></i> <%= @experience.address %></h3>
+      <h3> <i class="fa-solid fa-location-dot"></i> <%= @experience.address %></h3>
       <p><%= @experience.description %></p>
     </div>
   </div>
@@ -15,6 +15,8 @@
   <h6 class="card-trip-pricing"><b>¥<%= @experience.price %></b> <%= @experience.duration %>min</h6>
   <div class="card-body">
     <%= render 'bookings/form' %>
+    <div class="btn btn-info mt-2">
     <%= link_to 'To my bookings', bookings_path %>
+    </div>
   </div>
 </div>
