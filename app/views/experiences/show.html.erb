@@ -3,23 +3,32 @@
   <h2 class="card-trip-title"><%= @experience.name %></h2>
 
   <div class="row">
-    <%= cl_image_tag @experience.photo.key, class: "col-sm-6"%>
+    <%= cl_image_tag @experience.photo.key, class: "col-sm-6 h-50 p-2"%>
     <div class="card-trip-infos col-sm-6 align-items-start">
       <div>
         <h3> <i class="fa-solid fa-location-dot"></i> <%= @experience.address %></h3>
         <p class="fs-6"><%= @experience.description %></p>
         <h4 class="mt-4 mb-2"><i class="fa-regular fa-clock"></i> <%= @experience.duration %> min</h4>
         <h4 class="my-2"><i class="fa-solid fa-yen-sign"></i> <%= @experience.price %> /<i class="fa-solid fa-person"></i></h4>
+        <div class="mt-4">
+          <h3>--- Booking ---</h3>
+          <%= render 'bookings/form' %>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
 
+<!--
 <div class="card">
   <h6 class="card-trip-pricing"><b>¥<%= @experience.price %></b> <%= @experience.duration %>min</h6>
-  <div class="card-body">
-    <%= render 'bookings/form' %>
-     <%= link_to 'To my bookings', bookings_path, class: "btn btn-info mt-2 text-decoration-none text-dark" %>
+  <div class="card-body d-flex">
+    <div>
+      <%= render 'bookings/form' %>
+    </div>
+    <div class="btn btn-info mt-2">
+      <%= link_to 'To my bookings', bookings_path, class: "btn btn-info mt-2 text-decoration-none text-dark" %>
+    </div>
   </div>
 </div>
+-->
