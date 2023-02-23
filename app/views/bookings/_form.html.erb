@@ -1,6 +1,16 @@
 <div class="container mt-3">
-  <%= simple_form_for [@experience, @booking] do |f| %>
-    <%= f.input :start_date, html5: true %>
-    <%= f.submit class: 'btn btn-info mt-2' %>
-  <% end %>
+  <div>
+    <%= simple_form_for [@experience, @booking] do |f| %>
+      <%= f.input :start_date, html5: true %>
+      <%= f.input :number_of_people, collection: 1..10 %>
+      <%# <div class="number-of-people m-3">
+        <input type="radio" name="booking[number_of_people]" value="1" />
+        <input type="radio" name="booking[number_of_people]" value="2" />
+        <input type="radio" name="booking[number_of_people]" value="3" checked />
+        <input type="radio" name="booking[number_of_people]" value="4" />
+        <input type="radio" name="booking[number_of_people]" value="5" />
+      </div> %>
+      <%= f.submit "Submit", class: 'btn btn-info mt-2' %>
+    <% end %>
+  </div>
 </div>
