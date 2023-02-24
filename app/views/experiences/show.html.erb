@@ -1,9 +1,13 @@
+
 <div class="container">
   <div class="card-trip">
     <h2 class="card-trip-title"><%= @experience.name %></h2>
-
     <div class="row">
-      <%= cl_image_tag @experience.photo.key, class: "col-sm-6 h-50 p-2"%>
+      <% if @experience.photo.attached? %>
+        <%= cl_image_tag @experience.photo.key, class: "col-sm-6 h-50 p-2"%>
+      <% else %>
+        <%= image_tag "foodtourpic.jpg", class: "col-sm-6 h-50 p-2"%>
+      <% end %>
       <div class="card-trip-infos col-sm-6 align-items-start">
         <div>
           <h3> <i class="fa-solid fa-location-dot"></i> <%= @experience.address %></h3>
@@ -13,13 +17,12 @@
           <div class="mt-4">
             <h3>--- Booking ---</h3>
             <%= render 'bookings/form' %>
-          </div>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <!--
 <div class="card">
   <h6 class="card-trip-pricing"><b>¥<%= @experience.price %></b> <%= @experience.duration %>min</h6>
