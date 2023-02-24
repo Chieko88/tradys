@@ -18,7 +18,7 @@ class Experience < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :address, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: :only_integer
   validates :duration, presence: true
 
 
