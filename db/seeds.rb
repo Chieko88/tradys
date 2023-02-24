@@ -31,7 +31,7 @@ photo_url = "https://this-person-does-not-exist.com#{src}"
 host_user = User.create!(email: "host@gmail.com" , password: "123123" , first_name: "host", last_name: "host")
 
 file = URI.open(photo_url)
-hoster_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+host_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
 url = 'https://this-person-does-not-exist.com/en'
 doc = Nokogiri::HTML(URI.open(url).read)
