@@ -1,0 +1,3 @@
+<h3><%= experience.name %></h3>
+<p><%= experience.address %></p>
+<%= image_tag "#{experience.photo.attached? ? cl_image_path(experience.photo.key) : image_path("foodtourpic.jpg")}" %>
