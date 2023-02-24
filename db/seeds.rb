@@ -1,9 +1,25 @@
+require 'open-uri'
+require 'nokogiri'
+require 'faker'
+
 # Sample users
 Experience.destroy_all
 User.destroy_all
 
+url = 'https://this-person-does-not-exist.com/en'
+doc = Nokogiri::HTML(URI.open(url).read)
+src = doc.search('#avatar').first['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+
 3.times do
-  User.create(email: "me#{rand(0..5)}@gmail.com" , password: "12345678" , first_name: "me#{rand(0..9)}", last_name: "me#{rand(0..9)}" )
+  user = User.create(
+    email: "me#{rand(0..5)}@gmail.com",
+    password: "12345678" ,
+    first_name: "me#{rand(0..9)}",
+    last_name: "me#{rand(0..9)}"
+  )
+  file = URI.open(photo_url)
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 
 # Sample EXPERIENCES
