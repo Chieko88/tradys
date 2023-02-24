@@ -6,12 +6,11 @@ require 'faker'
 Experience.destroy_all
 User.destroy_all
 
-url = 'https://this-person-does-not-exist.com/en'
-doc = Nokogiri::HTML(URI.open(url).read)
-src = doc.search('#avatar').first['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
-
-3.times do
+5.times do
+  url = 'https://this-person-does-not-exist.com/en'
+  doc = Nokogiri::HTML(URI.open(url).read)
+  src = doc.search('#avatar').first['src']
+  photo_url = "https://this-person-does-not-exist.com#{src}"
   user = User.create(
     email: "me#{rand(0..5)}@gmail.com",
     password: "12345678" ,
