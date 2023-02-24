@@ -14,7 +14,7 @@ User.destroy_all
   user = User.create(
     email: "me#{rand(0..5)}@gmail.com",
     password: "12345678" ,
-    first_name: "me#{rand(0..9)}",
+    first_name: Faker::Name.first_name,
     last_name: "me#{rand(0..9)}"
   )
   file = URI.open(photo_url)
@@ -28,7 +28,7 @@ doc = Nokogiri::HTML(URI.open(url).read)
 src = doc.search('#avatar').first['src']
 photo_url = "https://this-person-does-not-exist.com#{src}"
 
-host_user = User.create!(email: "host@gmail.com" , password: "123123" , first_name: "host", last_name: "host")
+host_user = User.create!(email: "host@gmail.com" , password: "123123" , first_name: "Chie", last_name: "host")
 
 file = URI.open(photo_url)
 host_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
@@ -38,7 +38,7 @@ doc = Nokogiri::HTML(URI.open(url).read)
 src = doc.search('#avatar').first['src']
 photo_url = "https://this-person-does-not-exist.com#{src}"
 
-guest_user = User.create!(email: "guest@gmail.com" , password: "123123" , first_name: "guest", last_name: "guest")
+guest_user = User.create!(email: "guest@gmail.com" , password: "123123" , first_name: "Miriam", last_name: "guest")
 
 file = URI.open(photo_url)
 guest_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
