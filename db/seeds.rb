@@ -23,20 +23,14 @@ end
 
 
 # to be refactored #
-url = 'https://this-person-does-not-exist.com/en'
-doc = Nokogiri::HTML(URI.open(url).read)
-src = doc.search('#avatar').first['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
+photo_url = "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/a7/27/c1/a727c1cb-5ce2-31ac-6256-afa1bb2399c4/jacket_ESXX01748B00Z_550.jpg/600x600bf-60.jpg"
 
 host_user = User.create!(email: "host@gmail.com" , password: "123123" , first_name: "Chie", last_name: "host")
 
 file = URI.open(photo_url)
 host_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-url = 'https://this-person-does-not-exist.com/en'
-doc = Nokogiri::HTML(URI.open(url).read)
-src = doc.search('#avatar').first['src']
-photo_url = "https://this-person-does-not-exist.com#{src}"
+photo_url = "https://freehindiwishes.com/wp-content/uploads/2020/10/Stylish-Muslim-Girl-Dp-For-Fb-Profile-2.jpg"
 
 guest_user = User.create!(email: "guest@gmail.com" , password: "123123" , first_name: "Miriam", last_name: "guest")
 
