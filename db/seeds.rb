@@ -55,6 +55,16 @@ file = File.open("app/assets/images/flamencopic.jpg")
 experience.photo.attach(io: file, filename: "experience.jpg", content_type: "image/jpg")
 experience.save
 
+experience = Experience.create!(name: "Jellied Eel Cooking Class at London's Oldest Fast Food Restaurant", description: "Learn how to cook jellied eel, a traditional British dish at one of London's oldest fast food restaurants, F Cooke!", price: 6000, duration: 90 , address: "London, England", user: User.all.sample )
+file = File.open("app/assets/images/eelspic.jpg")
+experience.photo.attach(io: file, filename: "experience.jpg", content_type: "image/jpg")
+experience.save
+
+experience = Experience.create!(name: "Canadian Milk Bag Factory Tour", description: "Did you know that Canadians buy milk in bags, not cartons? Get an authentic Canadian experience on a life-changing tour of a milk bag factory!!", price: 5000, duration: 90 , address: "Etobicoke, Canada", user: User.all.sample )
+file = File.open("app/assets/images/milkbagpic.jpg")
+experience.photo.attach(io: file, filename: "experience.jpg", content_type: "image/jpg")
+experience.save
+
 # Sample bookings ( status to be set default 0 on migration)
 10.times do
   Booking.create(start_date: DateTime.now + rand(0..5), user: User.all.sample, experience: Experience.all.sample, status: 0 )
