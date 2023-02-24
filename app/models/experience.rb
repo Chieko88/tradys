@@ -6,6 +6,9 @@ class Experience < ApplicationRecord
       tsearch: { prefix: true } #
   }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
@@ -17,5 +20,6 @@ class Experience < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true
   validates :duration, presence: true
+
 
 end
