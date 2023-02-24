@@ -15,37 +15,38 @@
     </div>
     </div>
 </div>
-<div class="container">
-  <div class="cards">
-    <% if @experiences.any? %>
-    <% @experiences.each do |experience| %>
-      <div class="card-display-box">
-        <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
-        <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= experience.photo.attached? ? cl_image_path(experience.photo.key) : image_path("foodtourpic.jpg") %>)">
-          <%= experience.name %>
+<div class="container-fluid" style="display: flex">
+
+    <div class="cards" style="flex-grow: 1; margin-right: 8px;">
+      <% if @experiences.any? %>
+      <% @experiences.each do |experience| %>
+        <div class="card-display-box">
+          <%= link_to '', experience_path(experience), class: 'card-display-link'  %>
+          <div class="card-display" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= experience.photo.attached? ? cl_image_path(experience.photo.key) : image_path("foodtourpic.jpg") %>)">
+            <%= experience.name %>
+          </div>
+          <div class="row mt-1 ms-2">
+            <div class="col-sm-3 aline-item-center">
+              <p><i class="fa-regular fa-clock"></i> <%= experience.duration %> min</p>
+            </div>
+            <div class="col-sm-5 aline-item-center">
+              <p><i class="fa-solid fa-location-dot"></i> <%= experience.address %></p>
+            </div>
+            <div class="col-sm-4 aline-item-center">
+              <p><i class="fa-solid fa-yen-sign"></i> <%= experience.price %> /<i class="fa-solid fa-person"></i></p>
+            </div>
+          </div>
         </div>
-        <div class="row mt-1 ms-2">
-          <div class="col-sm-3 aline-item-center">
-            <p><i class="fa-regular fa-clock"></i> <%= experience.duration %> min</p>
-          </div>
-          <div class="col-sm-5 aline-item-center">
-            <p><i class="fa-solid fa-location-dot"></i> <%= experience.address %></p>
-          </div>
-          <div class="col-sm-4 aline-item-center">
-            <p><i class="fa-solid fa-yen-sign"></i> <%= experience.price %> /<i class="fa-solid fa-person"></i></p>
-          </div>
-        </div>
-      </div>
+      <% end %>
+       <% else %>
+        <h2>No results found for <em><%= params[:query] %></em> </h2>
+        <p>We couldn't find <em><%= params[:query] %></em>.Try searching again</p>
     <% end %>
-     <% else %>
-      <h2>No results found for <em><%= params[:query] %></em> </h2>
-      <p>We couldn't find <em><%= params[:query] %></em>.Try searching again</p>
-  <% end %>
-  </div>
-  <div class="map">
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
+    </div>
+
+      <div style="padding: 8px; width: 100%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>
