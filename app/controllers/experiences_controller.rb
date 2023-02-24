@@ -6,6 +6,12 @@ class ExperiencesController < ApplicationController
     else
       @experiences = all_experiences
     end
+    # add markers for map
+    @markers = @experiences.geocoded.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude
+      }
   end
 
   def show
@@ -48,7 +54,7 @@ class ExperiencesController < ApplicationController
   def experience_params
     params.require(:experience).permit(:name, :address, :description, :price, :duration, :photo)
   end
-  
+
   def all_experiences
     policy_scope(Experience)
   end
