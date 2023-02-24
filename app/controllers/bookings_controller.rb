@@ -20,6 +20,6 @@ class BookingsController < ApplicationController
 
     # validates :start_date, presence: true
   def booking_params
-    params.require(:booking).permit(:start_date)
+    params.require(:booking).permit(:start_date, :number_of_people)
   end
 end
