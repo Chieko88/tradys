@@ -21,8 +21,28 @@ User.destroy_all
   user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 
-host_user = User.create!(email: "host@gmail.com" , password: "12345678" , first_name: "host", last_name: "host")
-guest_user = User.create!(email: "guest@gmail.com" , password: "12345678" , first_name: "guest", last_name: "guest")
+
+# to be refactored #
+url = 'https://this-person-does-not-exist.com/en'
+doc = Nokogiri::HTML(URI.open(url).read)
+src = doc.search('#avatar').first['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+
+host_user = User.create!(email: "host@gmail.com" , password: "123123" , first_name: "host", last_name: "host")
+
+file = URI.open(photo_url)
+hoster_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
+url = 'https://this-person-does-not-exist.com/en'
+doc = Nokogiri::HTML(URI.open(url).read)
+src = doc.search('#avatar').first['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
+
+guest_user = User.create!(email: "guest@gmail.com" , password: "123123" , first_name: "guest", last_name: "guest")
+
+file = URI.open(photo_url)
+guest_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
 
 # Sample EXPERIENCES
 experience = Experience.new(name: "Challenge Sumo Wrestlers and Enjoy Lunch", description: "Eat, train, and fight like a real Japanese sumo wrestler during this sumo demonstration and authentic Chanko Nabe (hotpot) meal. Discover the history, training, and rules behind the typical sumo match as you watch real clashes. You can even try it yourself during a skirmish with a retired wrestler. Once you’ve worked up an appetite, dig into a tasty Chanko Nabe, a filling meal of hotpot, rice, miso, salad, French fries and more, used by these hulking fighters to gain weight. Admission to the demonstration and meals are both covered.", price: 14500, duration: 180 , address: "Sumida City, Japan", user: host_user )
