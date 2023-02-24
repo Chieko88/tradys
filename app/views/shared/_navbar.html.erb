@@ -14,10 +14,35 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          </li>
-          <li class="nav-item">
-            <%# <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <div class="d-flex align-items-center">
+            <div class="nav-item mx-4">
+            <%= link_to experiences_path, class: "nav-link" do %>
+              <i class="fa-solid fa-house fs-4"></i>
+            <% end %>
+            </div>
+            <li class="nav-item mx-4">
+              <%= link_to bookings_path, class: "nav-link" do %>
+                <i class="fa-regular fa-hand-point-right fs-4"></i>  Bookings
+              <% end %>
+            </li>
+            <li class="nav-item mx-4">
+              <%= link_to host_bookings_path, class: "nav-link" do %>
+              <i class="fa-solid fa-heart fs-4"></i>  My Experiences
+              <% end %>
+            </li>
+            <li class="nav-item mx-4">
+              <%= link_to new_experience_path, class: "nav-link" do %>
+                <i class="fa-regular fa-pen-to-square fs-4"></i>  Create Experience
+              <% end %>
+            </li>
+            <li class="nav-item mx-4">
+              <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" do %>
+              <i class="fa-solid fa-right-from-bracket fs-4"></i>
+              <% end %>
+            </li>
+          </div>
+
+
           <li class="nav-item dropdown">
             <%= image_tag "#{current_user.photo.attached? ? cl_image_path(current_user.photo.key) : "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" }", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
