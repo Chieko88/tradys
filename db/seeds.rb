@@ -6,8 +6,11 @@ User.destroy_all
   User.create(email: "me#{rand(0..5)}@gmail.com" , password: "12345678" , first_name: "me#{rand(0..9)}", last_name: "me#{rand(0..9)}" )
 end
 
+host_user = User.create!(email: "host@gmail.com" , password: "12345678" , first_name: "host", last_name: "host")
+guest_user = User.create!(email: "guest@gmail.com" , password: "12345678" , first_name: "guest", last_name: "guest")
+
 # Sample EXPERIENCES
-experience = Experience.new(name: "Challenge Sumo Wrestlers and Enjoy Lunch", description: "Eat, train, and fight like a real Japanese sumo wrestler during this sumo demonstration and authentic Chanko Nabe (hotpot) meal. Discover the history, training, and rules behind the typical sumo match as you watch real clashes. You can even try it yourself during a skirmish with a retired wrestler. Once you’ve worked up an appetite, dig into a tasty Chanko Nabe, a filling meal of hotpot, rice, miso, salad, French fries and more, used by these hulking fighters to gain weight. Admission to the demonstration and meals are both covered.", price: 14500, duration: 180 , address: "Sumida City, Japan", user: User.all.sample )
+experience = Experience.new(name: "Challenge Sumo Wrestlers and Enjoy Lunch", description: "Eat, train, and fight like a real Japanese sumo wrestler during this sumo demonstration and authentic Chanko Nabe (hotpot) meal. Discover the history, training, and rules behind the typical sumo match as you watch real clashes. You can even try it yourself during a skirmish with a retired wrestler. Once you’ve worked up an appetite, dig into a tasty Chanko Nabe, a filling meal of hotpot, rice, miso, salad, French fries and more, used by these hulking fighters to gain weight. Admission to the demonstration and meals are both covered.", price: 14500, duration: 180 , address: "Sumida City, Japan", user: host_user )
 file = File.open("app/assets/images/sumopic.jpg")
 experience.photo.attach(io: file, filename: "experience.jpg", content_type: "image/png")
 experience.save
@@ -17,7 +20,7 @@ file = File.open("app/assets/images/foodtourpic.jpg")
 experience.photo.attach(io: file, filename: "experience.jpg", content_type: "image/jpg")
 experience.save
 
-experience = Experience.create!(name: "Cooking Class and Lunch at a Tuscan Farmhouse with Local Market Tour from Florence", description: "Discover the secrets of Tuscan cooking during this full-day experience, including a market visit and cooking class, topped off with a 4-course lunch. Shop for fresh ingredients at a Florentine market before venturing to a Tuscan farmhouse in the countryside. Take your cue from an expert chef as you create Italian dishes from scratch including bruschetta, pasta, roast pork, and tiramisù. Then sit down to enjoy the fruits of your labor, complemented by Tuscan wine.", price: 21000, duration: 180 , address: "Firenze, Italy", user: User.all.sample )
+experience = Experience.create!(name: "Cooking Class and Lunch at a Tuscan Farmhouse with Local Market Tour from Florence", description: "Discover the secrets of Tuscan cooking during this full-day experience, including a market visit and cooking class, topped off with a 4-course lunch. Shop for fresh ingredients at a Florentine market before venturing to a Tuscan farmhouse in the countryside. Take your cue from an expert chef as you create Italian dishes from scratch including bruschetta, pasta, roast pork, and tiramisù. Then sit down to enjoy the fruits of your labor, complemented by Tuscan wine.", price: 21000, duration: 180 , address: "Firenze, Italy", user: host_user )
 file = File.open("app/assets/images/tuscanpic.jpg")
 experience.photo.attach(io: file, filename: "experience.jpg", content_type: "image/jpg")
 experience.save
