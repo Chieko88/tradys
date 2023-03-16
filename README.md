@@ -3,9 +3,16 @@
 Enjoy traditions around the world.
 
 <br>
+Look for an experience through the searchbar, on the map or through the homepage list.
 <img width="1263" alt="tradys_1" src="https://user-images.githubusercontent.com/117881400/225532101-ce84e28c-6944-4e95-b832-b20f90b27326.png">
+
+See the details of one specific experience and book it!
 <img width="1274" alt="tradys_2" src="https://user-images.githubusercontent.com/117881400/225532132-47bc2fd5-ffb2-44ab-af38-7c4c9dfbe791.png">
+
+Check your bookings status
 <img width="1278" alt="tradys_3" src="https://user-images.githubusercontent.com/117881400/225532155-beff9ae2-e966-4eb1-9b97-4d6af21ee96f.png">
+
+If you are hosting an experience, check the requests of bookings and accept/reject the pending ones
 <img width="1274" alt="tradys_4" src="https://user-images.githubusercontent.com/117881400/225532176-f8136e5f-0eaa-4740-8da7-a3d442f3a7f5.png">
 
 
