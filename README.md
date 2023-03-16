@@ -1,14 +1,16 @@
-# 🍣 Tradys
+# 🍣 Tradys 🎎
 
-Miraihabit is an app that helps you reduce your plastic footprint by completing daily challenges. Reduce your plastic consumption and choose new sustainable alternatives.
+Enjoy traditions around the world.
 
 <br>
-<img width="1131" alt="miraihabit_1" src="https://user-images.githubusercontent.com/121839115/224639113-e06de799-aabf-4419-8895-6dacae005b05.png">
-<img width="1134" alt="miraihabit_2" src="https://user-images.githubusercontent.com/121839115/224639130-18521e32-29dd-49ac-ab79-e2840a3752cd.png">
-<img width="1134" alt="miraihabit_3" src="https://user-images.githubusercontent.com/121839115/224639147-6f754f33-33f1-4711-8a8d-cd06db67ab89.png">
-<img width="1134" alt="miraihabit_4" src="https://user-images.githubusercontent.com/121839115/224639183-26489f2f-3372-49f1-96f4-169fbb3cefea.png">
+<img width="1263" alt="tradys_1" src="https://user-images.githubusercontent.com/117881400/225532101-ce84e28c-6944-4e95-b832-b20f90b27326.png">
+<img width="1274" alt="tradys_2" src="https://user-images.githubusercontent.com/117881400/225532132-47bc2fd5-ffb2-44ab-af38-7c4c9dfbe791.png">
+<img width="1278" alt="tradys_3" src="https://user-images.githubusercontent.com/117881400/225532155-beff9ae2-e966-4eb1-9b97-4d6af21ee96f.png">
+<img width="1274" alt="tradys_4" src="https://user-images.githubusercontent.com/117881400/225532176-f8136e5f-0eaa-4740-8da7-a3d442f3a7f5.png">
+
 
 App home: [https://tradys.herokuapp.com]
+
    
 
 ## Getting Started
