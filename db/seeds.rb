@@ -23,20 +23,21 @@ end
 
 
 # to be refactored #
+# host user #
 photo_url = "https://is5-ssl.mzstatic.com/image/thumb/Music124/v4/a7/27/c1/a727c1cb-5ce2-31ac-6256-afa1bb2399c4/jacket_ESXX01748B00Z_550.jpg/600x600bf-60.jpg"
-
 host_user = User.create!(email: "host@gmail.com" , password: "123123" , first_name: "Chie", last_name: "host")
-
 file = URI.open(photo_url)
 host_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-photo_url = "https://freehindiwishes.com/wp-content/uploads/2020/10/Stylish-Muslim-Girl-Dp-For-Fb-Profile-2.jpg"
-
+# guest user #
 guest_user = User.create!(email: "guest@gmail.com" , password: "123123" , first_name: "Miriam", last_name: "guest")
 
+url = 'https://this-person-does-not-exist.com/en'
+doc = Nokogiri::HTML(URI.open(url).read)
+src = doc.search('#avatar').first['src']
+photo_url = "https://this-person-does-not-exist.com#{src}"
 file = URI.open(photo_url)
 guest_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-
 
 # Sample EXPERIENCES
 experience = Experience.new(name: "Challenge Sumo Wrestlers", description: "Eat, train, and fight like a real Japanese sumo wrestler during this sumo demonstration and authentic Chanko Nabe (hotpot) meal. Discover the history, training, and rules behind the typical sumo match as you watch real clashes. You can even try it yourself during a skirmish with a retired wrestler. Once you’ve worked up an appetite, dig into a tasty Chanko Nabe, a filling meal of hotpot, rice, miso, salad, French fries and more, used by these hulking fighters to gain weight. Admission to the demonstration and meals are both covered.", price: 14500, duration: 180 , address: "Sumida City, Japan", user: host_user )
